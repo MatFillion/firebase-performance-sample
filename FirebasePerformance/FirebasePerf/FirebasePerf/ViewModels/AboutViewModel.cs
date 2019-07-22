@@ -12,17 +12,18 @@ namespace FirebasePerf.ViewModels
         {
             Title = "LearnMoreWillDo HttpCall";
 
-            OpenWebCommand = new Command(MakeHttpCall);
+			HttpCallCommand = new Command(MakeHttpCall);
             TracedHttpCallCommand = new Command(MakeTracedHttpCall);
         }
 
-        public ICommand OpenWebCommand { get; }
+        public ICommand HttpCallCommand { get; }
         public ICommand TracedHttpCallCommand { get; }
 
         private async void MakeHttpCall()
         {
 #if __ANDROID__
-            
+            // This call should be automatically traced.
+
 			var client = new OkHttpClient();
 			var requestBody = RequestBody.Create(
 				MediaType.Parse("application/json"),
@@ -41,6 +42,7 @@ namespace FirebasePerf.ViewModels
 
         private async void MakeTracedHttpCall()
         {
+			// This call should be traced by NewHttpMetric
 #if __ANDROID__
             var metric = Firebase.Perf.FirebasePerformance.Instance.NewHttpMetric(new Java.Net.URL("https://jsonplaceholder.typicode.com/todos"), "GET");
             var client = new OkHttpClient();

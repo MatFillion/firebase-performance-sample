@@ -14,7 +14,7 @@ namespace FirebasePerf
 			InitializeComponent();
 
 
-			MainPage = new MainPage();
+			MainPage = new AboutPage();
 		}
 
 		protected override void OnStart()
