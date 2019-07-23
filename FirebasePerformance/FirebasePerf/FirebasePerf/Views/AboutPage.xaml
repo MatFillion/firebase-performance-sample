@@ -38,17 +38,11 @@
 			<StackLayout Orientation="Vertical"
 						 Padding="16,40,16,40"
 						 Spacing="10">
-				<Label Text="The two buttons below will do http requests using OkHttp, which should be traced with Firebase.Performance" />
-
+				<Label Text="The buttons below will do http requests using OkHttp, which should be traced with Firebase.Performance" />
 
 				<Button Margin="0,10,0,0"
 						Text="http call"
 						Command="{Binding HttpCallCommand}"
-						BackgroundColor="{StaticResource Primary}"
-						TextColor="White" />
-				<Button Margin="0,10,0,0"
-						Text="traced http call"
-						Command="{Binding TracedHttpCallCommand}"
 						BackgroundColor="{StaticResource Primary}"
 						TextColor="White" />
 			</StackLayout>

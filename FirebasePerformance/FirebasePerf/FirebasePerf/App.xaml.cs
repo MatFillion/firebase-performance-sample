@@ -20,7 +20,7 @@ namespace FirebasePerf
 		protected override void OnStart()
 		{
 			// Handle when your app starts
-			Firebase.Perf.FirebasePerformance.Instance.PerformanceCollectionEnabled = true;
+			Com.Google.Firebase.Perf.FirebasePerformance.Instance.PerformanceCollectionEnabled = true;
 		}
 
 		protected override void OnSleep()
